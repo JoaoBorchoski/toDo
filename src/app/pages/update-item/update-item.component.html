@@ -1,0 +1,35 @@
+<po-page-default p-title="Editar" [p-actions]="pageActions">
+  <form [formGroup]="itemForm">
+    <div class="po-sm-12 po-md-6 po-lg-6 po-xl-6 no-padding">
+      <po-input
+        class="po-sm-12 po-md-12 po-lg-12 po-xl-12"
+        formControlName="id"
+        name="id"
+        p-label="Id"
+        p-readonly
+      >
+      </po-input>
+    </div>
+
+    <div class="po-sm-12 po-md-6 po-lg-6 po-xl-6 no-padding">
+      <po-input
+        class="po-sm-12 po-md-12 po-lg-12 po-xl-12 po-required"
+        formControlName="name"
+        name="name"
+        p-clean
+        p-label="Nome"
+        p-required
+      >
+      </po-input>
+    </div>
+    <div class="po-sm-12 po-md-6 po-lg-6 po-xl-6 no-padding">
+      <po-textarea
+        class="po-sm-12 po-md-12 po-lg-12 po-xl-12 po-required"
+        formControlName="description"
+        name="description"
+        p-label="Descrição"
+      >
+      </po-textarea>
+    </div>
+  </form>
+</po-page-default>

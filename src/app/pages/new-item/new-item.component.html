@@ -1,0 +1,25 @@
+<po-page-default p-title="Novo ToDo" [p-actions]="customPageActions">
+  <form [formGroup]="productForm">
+    <div class="po-sm-12 po-md-6 po-lg-6 po-xl-6 no-padding">
+      <po-input
+        [(ngModel)]="item.name"
+        class="po-sm-12 po-md-12 po-lg-12 po-xl-12 po-required"
+        formControlName="name"
+        name="name"
+        p-label="Nome"
+      >
+      </po-input>
+    </div>
+
+    <div class="po-sm-12 po-md-6 po-lg-6 po-xl-6 no-padding">
+      <po-input
+        [(ngModel)]="item.description"
+        class="po-sm-12 po-md-12 po-lg-12 po-xl-12 po-required"
+        formControlName="description"
+        name="description"
+        p-label="Descrição"
+      >
+      </po-input>
+    </div>
+  </form>
+</po-page-default>

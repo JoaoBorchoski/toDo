@@ -1,0 +1,14 @@
+<po-page-list p-title="Listas" [p-actions]="pageActions">
+  <div class="po-table-remove-show-more">
+    <po-table
+      #table
+      [p-items]="items"
+      [p-actions]="tableActions"
+      p-actions-right
+      p-container
+      [p-columns]="fields"
+      p-hide-columns-manager="true"
+    >
+    </po-table>
+  </div>
+</po-page-list>
