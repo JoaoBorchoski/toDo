@@ -52,6 +52,10 @@ export class UpdateItemComponent implements OnInit {
         action: () => this.save(this.itemForm.value),
       },
       {
+        label: 'Salvar e Novo',
+        action: () => this.save(this.itemForm.value, true),
+      },
+      {
         label: 'Cancelar',
         action: this.goBack.bind(this),
       }
@@ -60,13 +64,20 @@ export class UpdateItemComponent implements OnInit {
     return null;
   }
 
-  private save(item: any) {
-    this.listService.update(item).subscribe(() => {
-      this.poNotificationService.success({
-        message: 'Sucesso',
-        duration: 2000,
-      });
-      this.router.navigate(['/list']);
+  private save(item: any, newItem?: boolean) {
+    this.listService.update(item).subscribe({
+      next: () => {
+        this.poNotificationService.success({
+          message: 'Sucesso',
+          duration: 2000,
+        });
+        if (newItem) {
+          this.itemForm.reset();
+          this.router.navigate(['/newItem']);
+        } else {
+          this.router.navigate(['/list']);
+        }
+      },
     });
   }
 

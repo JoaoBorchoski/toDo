@@ -20,6 +20,10 @@ const routes: Routes = [
         component: NewItemComponent,
       },
       {
+        path: 'newItem/:id',
+        component: NewItemComponent,
+      },
+      {
         path: 'updateItem/:id',
         component: UpdateItemComponent,
       },

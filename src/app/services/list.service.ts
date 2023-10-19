@@ -33,6 +33,14 @@ export class ListService {
     return this.http.delete<List>(url);
   }
 
+  deleteMultiple(ids: any[]) {
+    ids.forEach((id: number) => {
+      const url = `${this.baseURL}/${id}`;
+      this.http.delete<List>(url);
+    });
+    return this.http.get<List[]>(this.baseURL);
+  }
+
   update(item: List): Observable<List> {
     const url = `${this.baseURL}/${item.id}`;
 

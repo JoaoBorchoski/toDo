@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { PoNotificationService, PoPageAction } from '@po-ui/ng-components';
+import { PoPageAction } from '@po-ui/ng-components';
 import { Subscription } from 'rxjs';
 import { ListService } from 'src/app/services/list.service';
 
@@ -31,8 +31,7 @@ export class ViewItemComponent implements OnInit {
     private router: Router,
     private listService: ListService,
     private activatedRoute: ActivatedRoute,
-    private formBuilder: FormBuilder,
-    private poNotificationService: PoNotificationService
+    private formBuilder: FormBuilder
   ) {}
 
   ngOnInit(): void {
@@ -46,16 +45,10 @@ export class ViewItemComponent implements OnInit {
   }
 
   pageButtonsBuilder() {
-    this.pageActions.push(
-      {
-        label: 'Voltar',
-        action: this.goBack.bind(this),
-      },
-      {
-        label: 'Novo item',
-        action: () => this.router.navigate(['/newItem']),
-      }
-    );
+    this.pageActions.push({
+      label: 'Voltar',
+      action: this.goBack.bind(this),
+    });
 
     return null;
   }
